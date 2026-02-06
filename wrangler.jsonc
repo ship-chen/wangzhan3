@@ -1,0 +1,18 @@
+{
+  // 你的Worker名称（英文/数字，自定义，如my-message-board）
+  "name": "MY_KV ",
+  // 兼容性日期（和Cloudflare Worker兼容，不用改）
+  "compatibility_date": "2026-02-06",
+  // 静态资源托管配置：指向dist目录
+  "assets": {
+    "directory": "./dist"
+  },
+  // KV命名空间绑定（关键！代码中用env.MY_KV访问）
+  "kv_namespaces": [
+    {
+      "binding": "MY_KV", // 必须和worker.js中的env.MY_KV一致
+      "id": "", // 后续Cloudflare后台创建KV后，填写KV的ID（下一步教你填）
+      "preview_id": "" // 本地开发预览用，和上面id填一样即可
+    }
+  ]
+}
